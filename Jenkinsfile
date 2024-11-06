@@ -13,7 +13,7 @@ pipeline {
         stage("clone") {
             steps {
                 echo 'Clone repository'
-                git 'git@github.com:ddumbre01/my-app.git'
+                git 'git@github.com:ddhananjay/jenkins-my-app.git'
             }
         }
         stage("test") {
