@@ -7,7 +7,7 @@ pipeline {
     environment {
             DOCKER_USER_NAME = "dhananjay01"
             DOCKER_CREDENTIALS = 'dockerhub'
-            DOCKER_IMAGE_NAME = "alpha-tech-repo/my-app" // Docker image name
+            DOCKER_IMAGE_NAME = "my-app" // Docker image name
             DOCKER_TAG = "latest"  // Docker tag (can be dynamic, like commit hash or build number)
             KUBERNETES_DEPLOYMENT_NAME = "spring-boot-my-app"  // Kubernetes deployment name
             KUBERNETES_NAMESPACE = "default"  // Kubernetes namespace
