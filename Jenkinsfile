@@ -25,6 +25,14 @@ pipeline {
                 git 'git@github.com:ddhananjay/jenkins-my-app.git'
             }
         }
+         stage('Test Spring Boot Application') {
+                            steps {
+                                  echo 'Running Tests application..'
+                                  script {
+                                         sh './gradlew test'
+                                  }
+                            }
+         }
         stage('Build Spring Boot Application') {
                     steps {
                           echo 'Building application..'
