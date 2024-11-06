@@ -46,7 +46,7 @@ pipeline {
                     steps {
                         echo 'Pushing docker file to docker hub..'
                         script {
-                        docker.withRegistry('https://hub.docker.com', DOCKER_CREDENTIALS) {
+                        docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS) {
                             sh """
                                 docker push ${DOCKER_IMAGE_NAME}:${DOCKER_TAG}
                             """
