@@ -48,7 +48,7 @@ pipeline {
          stage('Push Docker Image to Registry') {
                     steps {
                         echo 'Pushing docker file to docker hub..'
-                        uploadArtifactToDockerHub(DOCKER_IMAGE_NAME,DOCKER_TAG,DOCKER_USER_NAME )
+                        uploadArtifactToDockerHub('${DOCKER_IMAGE_NAME}','${DOCKER_TAG}',DOCKER_USER_NAME )
                      /*   script {
                         docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS) {
                             sh """
