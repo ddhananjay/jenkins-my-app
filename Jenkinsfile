@@ -48,7 +48,7 @@ pipeline {
                         script {
                         docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS) {
                             sh """
-                                docker push ${DOCKER_IMAGE_NAME}:${DOCKER_TAG}
+                                docker push ${DOCKER_USER_NAME}/${DOCKER_IMAGE_NAME}:${DOCKER_TAG}
                             """
                         }
                         }
