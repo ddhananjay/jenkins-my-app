@@ -20,7 +20,7 @@ pipeline {
     stages {
         stage("clone") {
             steps {
-                echo helloWorld('test')
+                echo timestampedEcho('test')
                 echo 'Clone repository'
                 git 'git@github.com:ddhananjay/jenkins-my-app.git'
             }
