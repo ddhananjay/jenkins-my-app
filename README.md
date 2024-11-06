@@ -1,1 +1,1 @@
-# jenkins-my-app
+# my-app
