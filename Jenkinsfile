@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+                git 'my' // This uses the global default Git installation
+        }
     environment {
             DOCKER_IMAGE_NAME = "alpha-tech-repo/my-app" // Docker image name
             DOCKER_TAG = "latest"  // Docker tag (can be dynamic, like commit hash or build number)
