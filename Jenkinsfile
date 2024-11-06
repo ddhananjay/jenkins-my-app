@@ -1,7 +1,8 @@
 pipeline {
     agent any
     tools {
-                git 'my' // This uses the global default Git installation
+                git 'my'
+                gradlew
         }
     environment {
             DOCKER_IMAGE_NAME = "alpha-tech-repo/my-app" // Docker image name
