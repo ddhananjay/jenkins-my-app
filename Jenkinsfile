@@ -1,5 +1,5 @@
 @Library('Jenkins-shared-lib') _
-timestampedEcho("This is a timestamped message")
+org.my-app.utils.DateUtils.timestampedEcho("This is a timestamped message")
 pipeline {
     agent any
     tools {
