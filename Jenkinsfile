@@ -5,6 +5,7 @@ pipeline {
                 gradle 'default'
         }
     environment {
+            DOCKER_USER_NAME = "dhananjay01"
             DOCKER_CREDENTIALS = 'dockerhub'
             DOCKER_IMAGE_NAME = "alpha-tech-repo/my-app" // Docker image name
             DOCKER_TAG = "latest"  // Docker tag (can be dynamic, like commit hash or build number)
@@ -35,7 +36,7 @@ pipeline {
                         script {
 
                             sh """
-                                docker buildx build -t ${DOCKER_IMAGE_NAME}:${DOCKER_TAG} .
+                                docker buildx build -t ${DOCKER_USER_NAME}/${DOCKER_IMAGE_NAME}:${DOCKER_TAG} .
                             """
                         }
                     }
@@ -45,7 +46,7 @@ pipeline {
                     steps {
                         echo 'Pushing docker file to docker hub..'
                         script {
-                        docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS) {
+                        docker.withRegistry('https://hub.docker.com', DOCKER_CREDENTIALS) {
                             sh """
                                 docker push ${DOCKER_IMAGE_NAME}:${DOCKER_TAG}
                             """
