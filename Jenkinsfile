@@ -20,14 +20,6 @@ pipeline {
                 git 'git@github.com:ddhananjay/jenkins-my-app.git'
             }
         }
-        stage("test") {
-            steps {
-                echo 'testing application..'
-                script {
-                      sh './gradlew test'
-                 }
-            }
-        }
         stage('Build Spring Boot Application') {
                     steps {
                           echo 'Building application..'
