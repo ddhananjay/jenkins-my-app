@@ -1,3 +1,5 @@
+@Library('Jenkins-shared-lib') _
+
 pipeline {
     agent any
     tools {
@@ -18,6 +20,7 @@ pipeline {
     stages {
         stage("clone") {
             steps {
+                echo helloWorld('test')
                 echo 'Clone repository'
                 git 'git@github.com:ddhananjay/jenkins-my-app.git'
             }
