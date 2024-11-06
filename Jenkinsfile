@@ -5,6 +5,7 @@ pipeline {
                 gradle 'default'
         }
     environment {
+            DOCKER_CREDENTIALS = 'dockerhub'
             DOCKER_IMAGE_NAME = "alpha-tech-repo/my-app" // Docker image name
             DOCKER_TAG = "latest"  // Docker tag (can be dynamic, like commit hash or build number)
             KUBERNETES_DEPLOYMENT_NAME = "spring-boot-my-app"  // Kubernetes deployment name
@@ -44,11 +45,13 @@ pipeline {
                     steps {
                         echo 'Pushing docker file to docker hub..'
                         script {
+                        docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS) {
                             sh """
                                 docker push ${DOCKER_IMAGE_NAME}:${DOCKER_TAG}
                             """
                         }
-                    }
+                        }
+                   }
          }
 
     }
