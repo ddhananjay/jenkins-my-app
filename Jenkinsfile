@@ -1,5 +1,5 @@
 @Library('Jenkins-shared-lib') _
-
+timestampedEcho("This is a timestamped message")
 pipeline {
     agent any
     tools {
@@ -20,7 +20,6 @@ pipeline {
     stages {
         stage("clone") {
             steps {
-                echo timestampedEcho('test')
                 echo 'Clone repository'
                 git 'git@github.com:ddhananjay/jenkins-my-app.git'
             }
