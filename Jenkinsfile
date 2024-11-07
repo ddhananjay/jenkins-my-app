@@ -79,7 +79,7 @@ pipeline {
           stage('Deploy to EKS') {
                               steps {
                                   script {
-                                      deployToEKS('k8s/deployment.yaml', EKS_CLUSTER_NAME, AWS_REGION)
+                                     // deployToEKS('k8s/deployment.yaml', EKS_CLUSTER_NAME, AWS_REGION)
                                   }
                               }
              }
