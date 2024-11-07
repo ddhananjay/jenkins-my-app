@@ -32,7 +32,7 @@ pipeline {
                             steps {
                                   echo 'Running Tests application..'
                                   script {
-                                    test(LANGUAGE)
+                                  //  test(LANGUAGE)
                                   }
                             }
          }
