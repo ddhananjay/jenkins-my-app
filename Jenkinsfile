@@ -7,7 +7,7 @@ pipeline {
                 gradle 'default'
         }
     environment {
-            AWS_REGION = 'us-west-2'
+            AWS_REGION = 'us-east-2'
             EKS_CLUSTER_NAME = 'alphatech-cluster'
             DOCKER_USER_NAME = "dhananjay01"
             DOCKER_CREDENTIALS = 'dockerhub'
@@ -76,7 +76,7 @@ pipeline {
                          """
                      }
                  }
-       
+
           stage('Deploy to EKS') {
                               steps {
                                   script {
