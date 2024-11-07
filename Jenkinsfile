@@ -31,9 +31,8 @@ pipeline {
          stage('Test Spring Boot Application') {
                             steps {
                                   echo 'Running Tests application..'
-                                  script {
-                                  //  test(LANGUAGE)
-                                  }
+                                  test(LANGUAGE)
+
                             }
          }
         stage('Build Spring Boot Application') {
@@ -81,6 +80,7 @@ pipeline {
           stage('Deploy to EKS') {
                               steps {
                                   script {
+                                      echo 'done'
                                      // deployToEKS('k8s/deployment.yaml', EKS_CLUSTER_NAME, AWS_REGION)
                                   }
                               }
