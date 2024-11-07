@@ -7,6 +7,7 @@ pipeline {
                 gradle 'default'
         }
     environment {
+            LANGUAGE = 'java'
             AWS_REGION = 'us-east-2'
             EKS_CLUSTER_NAME = 'alphatech-cluster'
             DOCKER_USER_NAME = "dhananjay01"
@@ -30,9 +31,7 @@ pipeline {
          stage('Test Spring Boot Application') {
                             steps {
                                   echo 'Running Tests application..'
-                                  script {
-                                         sh './gradlew test'
-                                  }
+                                  test(LANGUAGE)
                             }
          }
         stage('Build Spring Boot Application') {
