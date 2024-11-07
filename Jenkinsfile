@@ -66,13 +66,14 @@ pipeline {
                    }
          }
 
-                 stage('Configure kubectl') {
+              /*   required when uploading to AWS K8
+              stage('Configure kubectl') {
                      steps {
                          sh """
                              aws eks update-kubeconfig --name ${EKS_CLUSTER_NAME} --region ${AWS_REGION}
                          """
                      }
-                 }
+                 }*/
 
           stage('Deploy to EKS') {
                               steps {
