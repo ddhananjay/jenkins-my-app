@@ -68,6 +68,15 @@ pipeline {
                         }*/
                    }
          }
+          stages {
+                 stage('Configure kubectl') {
+                     steps {
+                         sh """
+                             aws eks update-kubeconfig --name ${EKS_CLUSTER_NAME} --region ${AWS_REGION}
+                         """
+                     }
+                 }
+             }
           stage('Deploy to EKS') {
                               steps {
                                   script {
