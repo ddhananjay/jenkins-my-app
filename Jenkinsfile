@@ -68,7 +68,7 @@ pipeline {
                         }*/
                    }
          }
-          stages {
+
                  stage('Configure kubectl') {
                      steps {
                          sh """
@@ -76,7 +76,7 @@ pipeline {
                          """
                      }
                  }
-             }
+       
           stage('Deploy to EKS') {
                               steps {
                                   script {
