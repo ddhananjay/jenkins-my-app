@@ -31,7 +31,9 @@ pipeline {
          stage('Test Spring Boot Application') {
                             steps {
                                   echo 'Running Tests application..'
-                                 // test(LANGUAGE)
+                                  script {
+                                    test(LANGUAGE)
+                                  }
                             }
          }
         stage('Build Spring Boot Application') {
