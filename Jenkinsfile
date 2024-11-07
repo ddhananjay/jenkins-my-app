@@ -1,5 +1,4 @@
 @Library('Jenkins-shared-lib') _
-import org.utils.*
 
 pipeline {
     agent any
@@ -8,6 +7,8 @@ pipeline {
                 gradle 'default'
         }
     environment {
+            AWS_REGION = 'us-west-2'
+            CLUSTER_NAME = 'alphatech-cluster'
             DOCKER_USER_NAME = "dhananjay01"
             DOCKER_CREDENTIALS = 'dockerhub'
             DOCKER_IMAGE_NAME = "my-app" // Docker image name
@@ -67,6 +68,13 @@ pipeline {
                         }*/
                    }
          }
+          stage('Deploy to EKS') {
+                              steps {
+                                  script {
+                                      deployToEKS('k8s/deployment.yaml', EKS_CLUSTER_NAME, AWS_REGION)
+                                  }
+                              }
+             }
 
     }
 
