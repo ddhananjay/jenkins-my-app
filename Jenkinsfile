@@ -32,15 +32,12 @@ pipeline {
                             steps {
                                   echo 'Running Tests application..'
                                   test(LANGUAGE)
-
                             }
          }
         stage('Build Spring Boot Application') {
                     steps {
                           echo 'Building application..'
-                          script {
-                                 sh './gradlew clean build'
-                          }
+                            build(LANGUAGE)
                     }
         }
         stage('Build Docker Image') {
