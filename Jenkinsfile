@@ -8,7 +8,7 @@ pipeline {
         }
     environment {
             AWS_REGION = 'us-west-2'
-            CLUSTER_NAME = 'alphatech-cluster'
+            EKS_CLUSTER_NAME = 'alphatech-cluster'
             DOCKER_USER_NAME = "dhananjay01"
             DOCKER_CREDENTIALS = 'dockerhub'
             DOCKER_IMAGE_NAME = "my-app" // Docker image name
